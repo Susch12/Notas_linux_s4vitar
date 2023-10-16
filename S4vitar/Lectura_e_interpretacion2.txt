@@ -1,0 +1,5 @@
+Permisos en linux | Còmo son y còmo se cambian:
+https://www.softzone.es/programas/linux/permisos-archivos-directorios-linux/
+
+Cambiar permisos con comandos:
+https://www.hostinger.es/tutoriales/cambiar-permisos-y-propietarios-linux-linea-de-comandos/

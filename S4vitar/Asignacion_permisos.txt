@@ -1,0 +1,80 @@
+chmod --- Cambiar privilegios 
+
+chmod o+w prueba/  ---- Para que otros puedan escribir
+
+rm -r * ---- Para borrar el contenido de un directorio
+
+chmod o-w prueba ---- Para quitar que puedan escribir
+
+chgrp susch prueba ---- Para cambiar el grupo del directorio 
+chmod g+w prueba ---- Los grupos puedan escribir en el directorio
+
+chmod u-x,g-rx,o+w,o-x  ----- u-propieatario g-grupos y o-otros
+
+Asignación de permisos: https://www.ionos.es/digitalguide/servidores/know-how/asignacion-de-permisos-de-acceso-con-chmod/
+Propietarios y permisos: https://atareao.es/tutorial/terminal/propietarios-y-permisos/
+
+------------------------- Asignaciòn de permisos [2/2] ------
+
+Crear un nuevo usuario
+
+useradd ---- Crear usuario
+useradd pepe -s /bin/bash -d /home/pepe --- Con el comando -s asignamos el tipo de shell que ejecutarà el usuario pepe y con -d asginamos un directorio de trabajo para pepe
+
+Para verificar que se hizo correctamente deberemos confirmarla creaciòn del usuario en /etc/passwd:
+cat /etc/passwd | grep pepe (Asì)
+
+cat /etc/group | grep pepe
+
+passwd pepe: --- Crea una nueva contraseña
+
+chgrp pepe pepe ---- asignamos el usuario pepe al grupo pepe
+para el propietario se hace lo siguiente 
+chown pepe pepe 
+
+chowm pepe:pepe pepe/ ---- Para ahorrar los pasos anteriores
+su pepe --- Para iniciar como pepe
+
+groupadd Alumnos ---- Para crear un grupo 
+cat /ect/group | grep Alumnos
+
+usermod -a -G Alumnos pepe ---- Para agregar un usuario al grupo alumnos 
+
+cat /etc/group | grep Alumnos  ---- Para confirmar que se agrego a pepe al grupo alumnos 
+
+chmod o-rx prueba  ---- para que otros no puedan leer ni atravesar el directorio prueba
+
+chgrp Alumnos prueba ---- Cambiamos el grupo del directorio
+
+chmod g+w prueba ---- Para que los grupos puedan escribir y leer.
+
+## Solo se permite a quienes tengan los permisos de wrx
+
+Gestión de usuarios, grupos y permisos en Linux: https://computernewage.com/2016/05/22/gestionar-usuarios-y-permisos-en-linux/
+
+Gestión de usuarios y grupos en Linux: https://atareao.es/como/gestion-de-usuarios-y-grupos-en-linux/
+
+------------------------- Notaciòn octal de permisos ----------
+
+# Crear un directorio siendo root
+·̣ usaremos esto para indicar elevado a.
+rwx r-x r-x
+111|101|101
+210     210
+ 7   5   5    2·0+2·1+2·2=7  5  2·0+2·2 = 5
+
+chmod 755 testing --- Cambiando en octal 
+
+r-x r-- -w-
+101 100 010
+ 5   4   2
+
+chmod 542 testing --- Cambiando en octal
+
+## Truco 
+rwx rwx rwx
+421 421 421 
+010 101 001
+ 2   5   1
+
+
