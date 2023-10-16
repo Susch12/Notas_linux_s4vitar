@@ -1,0 +1,77 @@
+Inicio:
+
+comados iniciales 
+
+whoami -- Te dice quien eres
+
+sudo su -- Para crear una sesisòn como root
+
+id 
+
+/etc/group --- Directorio desde la raìz/archivo
+
+cat --- Contenido del archivo 
+
+which 
+
+--- Ruta relativa y ruta absoluta --
+which  whoami (para encontrar la ruta absoluta)
+
+whoami -- Ruta relativa 
+
+/usr/bin/whoami -- Ruta absoluta 
+
+echo $PATH -- listar contenido 
+#Prioridad de izquierda a derecha 
+
+ctrl+l -- Se despeja la pantalla, pero seguarda lo demàs.
+
+/bin/cat /etc/gruop | grep "floppy" #pipeado o funciòn de filtrado
+
+/bin/cat /etc/gruop | gerp "floppt" -n  #Esta opción (o bandera) se utiliza para mostrar el número de línea en el que se encuentra la coincidencia. Cuando usas grep -n, obtendrás la línea que coincide con el patrón junto con un número de línea precediendo esa línea.
+
+Link con comandos: https://ciberninjas.com/chuleta-comandos-linux/
+
+--------------------------------------------------------------------------------------------------------------------
+En caso de que no exista el comando which puedes usar el siguiente comando:
+command -v whoami
+
+pwd -- Muestra donde te encuentras (ruta)
+
+ls -- Listar el contenido del directorio actual.
+
+ls /bin/ -- Listar el contenido de una ruta especifica
+
+ls - l --- Lista de forma màs detallada del directorio
+
+## Conocer los detalles que muestran ls -l 
+
+cd -- change directory
+cd .. -- Ir un directorio atras 
+cd Firefox -- Ir a un directorio
+cd /home/susch/Descargas/Firefox -- Ir a una direcciòn especifica 
+cd / --- Ir a la raìz.
+cd --- Va al directorio personal de usuario 
+
+echo $HOME  #Igual que $PATH 
+
+cat /etc/passwd --- Donde se definen los directorios personales de usuario y los usuarios personales existentes.
+
+echo $SHELL 
+
+cat /etc/shells --- Puedes observar las shells existentes
+
+## En Unix (y otros sistemas derivados), el comando echo permite utilizar variables y otros elementos del intérprete de comandos. En las implementaciones más comunes y usadas como Bash, echo se trata de una función built-in, es decir, una función interna del intérprete de comandos y no un programa externo, así como cat o grep.
+
+## Instalar zxhs
+
+Otro enlance con comandos de Linux:  https://www.fing.edu.uy/inco/cursos/sistoper/recursosLaboratorio/tutorial0.pdf
+
+Renombrar archivos en linux 
+mv (nombre  antiguo) nombre  nuevo 
+mv notes.txt S4vitar.txt
+
+Enlance de referencia: https://www.hostinger.mx/tutoriales/renombrar-archivos-linux
+
+Enlance para mover, remover y cambiar nombre (entre otros): https://www.zeppelinux.es/mover-copiar-renombrar-y-borrar-directorios-y-archivos-en-linux/#an_n22
+º

@@ -1,0 +1,49 @@
+#Concadenar
+
+whoami;ls --- Separar comandos con ;
+
+whoami && ls --- Separar con AND si y solo si el primer comando es existoso
+
+echo $? --- Ver codigo de estado (si es exitoso serà 0)
+
+whoami || ls --- Separar con OR cuando alguno sea verdadero
+
+ > --- Redirectores
+ whoam 2>/dev/null --- /dev/null es como un agujero negro, un recurso que hace que desvanesca 
+
+whoam 2>/dev/null -- Esto no tendrà un output aunque sea un error
+
+stdrt
+stdout
+
+cat /etc/host/ &> /dev/null
+
+## Ocultar el output de un programa
+
+wireshark &>/dev/null
+
+## Poner en segundo plano dependiendo de la consola, si esta se cierra el programa en segundo plano, tambièn lo harà 
+wireshark &>/dev/null/ &
+PID --- Valor identificativo 
+
+
+## Para poner en segundo plano de forma independiente de la consola 
+
+wireshark &>/dev/null & disowm 
+
+## Cosas no comprendidas y explicadas:  
+
+&>/dev/null: Esta parte redirige tanto la salida estándar (stdout) como la salida de error estándar (stderr) a /dev/null. /dev/null es un dispositivo especial en Unix/Linux que descarta todo lo que se le envía. En otras palabras, al hacer esto, estás deshabilitando la salida estándar y la salida de error de Wireshark, lo que significa que no se mostrarán mensajes en la terminal mientras Wireshark se está ejecutando.
+
+disowm:El comando disown se utiliza para desvincular un proceso de la terminal actual. Cuando ejecutas disown, significa que el proceso en segundo plano (Wireshark en este caso) ya no está asociado con la terminal y no será afectado si cierras la terminal. Esto es útil para ejecutar aplicaciones en segundo plano que no deseas que se cierren cuando cierras la terminal.
+
+stdout:es el flujo de datos estándar que se utiliza para la salida de información general generada por un programa o comando.
+Cuando ejecutas un programa o comando en una terminal, la salida que se produce, como mensajes, resultados, o datos, generalmente se envía al flujo de stdout.
+Por defecto, la salida stdout se muestra en la terminal, lo que significa que verás el resultado en la pantalla.
+
+stderr: es el flujo de datos estándar que se utiliza para la salida de mensajes de error generados por un programa o comando.
+Los mensajes de error, que indican problemas o excepciones durante la ejecución de un programa, se envían al flujo de stderr en lugar de stdout.
+Al igual que stdout, los mensajes de stderr suelen aparecer en la terminal, pero se distinguen de la salida estándar ya que generalmente se imprimen en rojo u otro formato de texto diferente para resaltar que son mensajes de error.
+
+
+El uso de &:Este símbolo se utiliza para poner el proceso en segundo plano. En otras palabras, después de ejecutar Wireshark, el proceso se ejecutará en segundo plano y te devolverá el control de la terminal para que puedas seguir utilizando la terminal sin esperar a que Wireshark termine. 
