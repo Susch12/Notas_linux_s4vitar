@@ -1,0 +1,82 @@
+#stickybit
+
+chowm pepe:pepe ---- Cambiar propietario
+chmod g+w,o+w pruebas/
+
+chmod 777 pruebas/
+
+ls -l
+chmod -t pruebas/ ---- Inicias el stickybit
+chattr lsattr ---- flags hasta  inmutables
+
+Enlaces: 
+¿Qué es el Sticky Bit y cómo configurarlo?: https://keepcoding.io/blog/que-es-el-sticky-bit-y-como-configurarlo/
+El bit Sticky | Tutorial de GNU/Linux: https://www.fpgenred.es/GNU-Linux/el_bit_sticky.html
+
+------------------------------------------------------------------------------------------------
+
+cp /etc/hosts prueba ---- cp - copia 
+
+lsattr prueba (para ver la informaciòn de flags)
+chattr +i -V prueba ---- Asì se genera un flag inmutable
+chattr -i -V prueba ---- Asì se quita el permiso de flag inmutable 
+
+Enlances: Control de atributos de ficheros Linux: Chattr y Lsattr https://rm-rf.es/chattr-y-lsattr-visualizar-y-modificar-atributos-en-sistemas-de-ficheros-linux/#:~:text=El%20primer%20comando%2C%20lsattr%20permite,chmod%2C%20chown%2Csetfacl%E2%80%A6)
+
+Comandos Chattr y Lsattr en Linux: https://programmerclick.com/article/5604675172/
+
+-----------------------------------------------------------------------------------------------
+
+ SUID y SGID 
+
+sudo su
+python3.9
+which python3.9 ---- Donde reside 
+which python3.9 | xargs ls -l ---- xargs para todo el comando anterior aplica el siguiente comando
+Pwmkit ---- Exploit
+
+find / -type f -perm -4000  2>/dev/null 
+
+binarios suid
+
+python3.9
+Desde el interprete de Python:
+import os
+os.setuid(0)
+os.system("whoami")
+  root ---- Esto deberìa imprimir el interprete
+  0
+os.system("id")
+
+os.system("bash")
+os.systme("zsh")
+
+
+SGID
+
+find / -perm -2000 2>/dev/null/ 
+
+which python3.9 | xargs ls -l
+chmod g+s /usr/bin/python3.9
+
+Cuando se asigna el permiso SGID, podemos notarlo porque en los permisos, en la parte de grupo, en el permiso de ejecución se asignará una s. Ojo, aquí hay que hacer dos distinciones:
+
+https://deephacking.tech/permisos-sgid-suid-y-sticky-bit-linux/#:~:text=Permiso%20SGID,-El%20permiso%20SGID&text=Si%20se%20establece%20en%20un,perteneciente%2C%20el%20grupo%20del%20directorio.
+
+https://www.ochobitshacenunbyte.com/2019/06/17/permisos-especiales-en-linux-sticky-bit-suid-y-sgid/
+------------------------------------------------------------------------------------------------
+
+Privilegios especiales
+Capabilities ---- Capacidad
+
+which python3.9 | xargs ls-l
+
+which getcap 
+
+getcap -r / 2 >/dev/null ---- Capabilities del sistema 
+!$ -- del comando anterior
+GTFOBins ---- Capabilities de alguno
+
+Enlances: ¿Qué son las Linux Capabilities?: http://www.etl.it.uc3m.es/Linux_Capabilities
+
+
