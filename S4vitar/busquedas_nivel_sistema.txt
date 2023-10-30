@@ -1,0 +1,10 @@
+find / -name dex\*.sh 2>/dev/null
+
+Busca archivos que encuentra archivos y directorios similares.
+
+man find
+
+find / -name dex\*.sh -ls 2>/dev/null
+
+Comandos Find y Locate en Linux: https://www.hostinger.es/tutoriales/como-usar-comando-find-locate-en-linux/
+
