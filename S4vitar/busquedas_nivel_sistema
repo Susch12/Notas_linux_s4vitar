@@ -1,0 +1,29 @@
+find / -name passwd 2>/dev/null/
+
+find / -name passwd 2>/dev/null/ |xargs ls -l
+
+filtrar para encontrar SUID
+
+find / -perm -4000 2>/dev/null
+
+find / -group s4vitar 2>/dev/null
+
+find / -group s4vitar -type f 2>/dev/null
+
+--> f de file ò d de directorio
+find / -user root -writable 2>/dev/null
+
+find / -user root -executable -type f 2>/dev/null
+
+--> 
+
+find / -name dex\* 2>/dev/null
+
+--> busca en la raìz el archivoiniciando con  dex\* completando lo de la busqueda.
+
+find / -name \*exdum\* 2>/dev/null
+
+\* --> para completar los vacios del archivo
+
+
+
