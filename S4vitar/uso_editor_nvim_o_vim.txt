@@ -1,0 +1,35 @@
+Ctrl+u ---> Para hacer algo parecido a un ctrl+z de Windows
+
+0 ---> Para ir al inicio 
+$ ---> Para ir al final 
+w-> Para ir por tres palabras 2w ---> Para adelantar dos palabras
+dw ---> Para borrar palabras 2dw ---> Para borrar dos palabras
+dd ---> Para borrar lineas  2dd ---> Para borrar dos lineas
+
+v --> Para entrar en modo seleccion 
+Shift+4 ---> Para ir al final de la linea
+i ---> Para copiar
+p ---> Para pegar lo copiado
+
+q+a ---> Para iniciar una grabaciòn de teclado
+q ---> Para terminar de grabar
+@ ---> Para ejecutar lo grabado
+
+esc+/ ---> Modo busqueda 
+esc+:%s/aaaa/ssss ---> /forma original/ forma a cambiar /g ---> para cambiar solo en la ùnica linea
+
+aaaa
+aaaaa
+aaaaa
+aaaaa
+aaaaa
+aaaaaaa 
+aaaaaaaaaaaaaa 
+aaaaaaaa
+aaaaaaaaa
+aaaaaaaaaaaaaaaa
+aaaaaa
+aaaaaaa 
+aaaaaaaa
+aaaaaaa 
+aaaaaaaa
