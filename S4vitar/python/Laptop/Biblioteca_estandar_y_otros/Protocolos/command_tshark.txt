@@ -1,0 +1,4 @@
+stdbuf -oL  tshark -i lo -Y "tcp" -e data.data -Tfields 2>/dev/null | while read line; do echo "$line" | xxd -ps -r; done
+stdbuf --> Es para que qen tiempo real intreprete la salida de Tshark
+tshark --> -Y para filtrar por entrada, el -e para mostrar el campo que queremos y este se complementa con Tfields
+Lo demás es bash para poder pasar de hexadecimal a texto plano
